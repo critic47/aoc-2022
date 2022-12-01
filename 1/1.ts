@@ -23,5 +23,7 @@ for(const v of input) {
     }
 }
 
+// question 1
 console.log('Max:', max)
+// question 2
 console.log('Top3 total:', top3.reduce((tot, n) => tot + n, 0))
