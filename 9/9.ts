@@ -28,8 +28,8 @@ input.forEach((line) => {
         break
     }
     if (distance(head, tail) > 1) {
-      tail[0] = tail[0] + (head[0] - tail[0]) / (Math.abs(head[0] - tail[0]) || 1)
-      tail[1] = tail[1] + (head[1] - tail[1]) / (Math.abs(head[1] - tail[1]) || 1)
+      tail[0] = tail[0] + Math.sign(head[0] - tail[0])
+      tail[1] = tail[1] + Math.sign(head[1] - tail[1])
       tailPositions.add(`${tail[0]},${tail[1]}}`)
     }
   }

@@ -42,8 +42,8 @@ input.forEach((line) => {
       const prevKnot = rope[i - 1]
       const knot = rope[i]
       if (distance(prevKnot, knot) > 1) {
-        knot[0] = knot[0] + (prevKnot[0] - knot[0]) / (Math.abs(prevKnot[0] - knot[0]) || 1)
-        knot[1] = knot[1] + (prevKnot[1] - knot[1]) / (Math.abs(prevKnot[1] - knot[1]) || 1)
+        knot[0] = knot[0] + Math.sign(prevKnot[0] - knot[0])
+        knot[1] = knot[1] + Math.sign(prevKnot[1] - knot[1])
       }
     }
     tailPositions.add(`${rope[9][0]},${rope[9][1]}}`) // add tail position
